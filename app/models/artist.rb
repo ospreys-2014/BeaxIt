@@ -1,3 +1,4 @@
 class Artist < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :albums
+  has_many :tracks, through: :albums
 end

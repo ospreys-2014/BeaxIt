@@ -1,3 +1,4 @@
 class Playlist < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :tracks
+  belongs_to :user
 end
