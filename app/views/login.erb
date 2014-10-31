@@ -1,0 +1,12 @@
+<% if session[:error] %>
+<center><p><%= session[:error] %></p></center>
+<% session[:error] = nil %>
+<% end %>
+
+<form action="/login" method="POST">
+Username:
+<input type="text" name="username">
+Password:
+<input type="password" name="password">
+<input type="submit" value="login">
+</form>
