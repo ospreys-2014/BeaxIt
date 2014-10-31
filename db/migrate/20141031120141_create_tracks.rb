@@ -4,6 +4,7 @@ class CreateTracks < ActiveRecord::Migration
       t.string :title
       t.belongs_to :artist
       t.belongs_to :album
+      t.belongs_to :playlist
 
       t.timestamps
     end
