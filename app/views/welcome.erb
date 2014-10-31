@@ -1,7 +1,9 @@
 <% if session[:user_id] %>
-<p>Welcome to soundcloud <%= session[:user_name] %>!</p>
+  <p>Welcome to soundcloud <%= session[:user_name] %>!</p>
+<% else %>
+  <p>Welcome to soundcloud!</p>
 <% end %>
 
-<a href="/login">Login</a>
 <a href="/signup">SignUp</a>
-<h1>Welcome to my site!</h1>
+<a href="/login">Login</a>
+<a href="/logout">Logout</a>
