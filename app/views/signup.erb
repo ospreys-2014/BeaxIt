@@ -1,0 +1,14 @@
+<% if session[:error] %>
+<center><p><%= session[:error][0] %></p></center>
+<% session[:error] = nil %>
+<% end %>
+
+<form action="/signup" method="POST">
+Create a Username:
+<input type="text" name="user[username]"><br>
+Enter a Password:
+<input type="password" name="user[password]"><br>
+Re-enter your Password:
+<input type="password" name="user[password_confirmation">
+<input type="submit" value="signup">
+</form>
