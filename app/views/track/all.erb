@@ -1,0 +1,4 @@
+<h1>My Songs</h1><br>
+<% tracks.each do |track| %>
+<%= erb :'/track/single', locals: {track: track} %> <br>
+<% end %>
