@@ -1,0 +1,6 @@
+<div class="single_album">
+  <%= album.title %>
+  <% album.tracks.each do |track| %>
+    <%= erb :"tracks/single", locals:{track: track} %>
+  <% end %>
+</div>
