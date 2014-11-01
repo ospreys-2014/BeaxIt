@@ -10,3 +10,13 @@
 #   track.update(link: "tracks/#{track.title}")
 #   track.save
 # end
+
+# Track.all.each do |track|
+#   track.artist = Artist.first
+#   track.save
+# end
+
+# Track.all.each do |track|
+#   track.album = Album.first
+#   track.save
+# end
