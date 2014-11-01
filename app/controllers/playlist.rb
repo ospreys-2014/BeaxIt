@@ -4,6 +4,17 @@ get '/playlists' do
   erb :"playlists/all", locals:{playlists: @playlists}
 end
 
+get '/add/playlist' do
+  @tracks = Track.all
+
+  erb :"playlists/add", locals:{tracks: @tracks}
+end
+
+post '/add_song' do
+  Playlist.find_or_create_by(name: params[:name]).tracks << Track.find(params[:track])
+
+  redirect '/playlists'
+end
 
 get '/playlist/:id' do |id|
   @playlist = Playlist.find(id)
@@ -11,12 +22,11 @@ get '/playlist/:id' do |id|
   erb :'playlists/single', locals: {playlist: @playlist}
 end
 
-get '/add_song' do
-  erb :'/playlists/add_song'
-end
 
-put '/add_song' do
-  Playlist.find_by(name = :playlist).tracks << Track.create(params[:song])
 
-  redirect '/playlists'
-end
+
+# put '/add_song' do
+#   Playlist.find_by(name = :playlist).tracks << Track.create(params[:song])
+
+#   redirect '/playlists'
+# end
