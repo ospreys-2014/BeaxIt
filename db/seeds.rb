@@ -20,3 +20,8 @@
 #   track.album = Album.first
 #   track.save
 # end
+
+# Track.all.each do |track|
+#   track.playlist = Playlist.first
+#   track.save
+# end
