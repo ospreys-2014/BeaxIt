@@ -11,3 +11,10 @@ get '/albums/:id' do |id|
 
   erb :'/album/artist_albums', locals: {albums: albums}
 end
+
+
+get '/albums/:id/tracks' do |id|
+  tracks = Album.find(id).tracks
+
+  erb :'/tracks/all', locals: {tracks: tracks}
+end
