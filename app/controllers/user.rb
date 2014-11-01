@@ -23,10 +23,6 @@ post '/signup' do
   end
 end
 
-get '/:id' do |id|
-
-end
-
 post '/login' do
   user = User.find_by(username: params[:username]).try(:authenticate, params[:password])
   if user

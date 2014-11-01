@@ -25,3 +25,8 @@
 #   track.playlist = Playlist.first
 #   track.save
 # end
+
+# Playlist.all.each do |playlist|
+#   playlist.user = User.first
+#   playlist.save
+# end
