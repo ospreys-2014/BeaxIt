@@ -1,0 +1,5 @@
+<div class="artists">
+  <% artists.each do |artist| %>
+    <%= erb :"artists/single", locals:{artist: artist} %>
+  <% end %>
+</div>

@@ -1,5 +1,5 @@
 <% if session[:user_id] %>
-  <p>Welcome to soundcloud <%= session[:user_name] %>!</p>
+  <p>Welcome to soundcloud <%= user.username %>!</p>
 <% else %>
   <p>Welcome to soundcloud!</p>
 <% end %>
@@ -9,3 +9,6 @@
 <a href="/logout">Logout</a>
 
 <a href='/artists'>Artists</a>
+<% if session[:user_id] %>
+  <%= erb :"playlists/all", locals:{playlists: playlists} %>
+<% end %>
