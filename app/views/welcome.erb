@@ -1,3 +1,4 @@
+
 <div class="jumbotron" id ="welcome" style='text-align: center;'>
 <% if session[:user_id] %>
   <h2 class="text-primary">Welcome, <strong><%= user.username %>!</strong></h2>
@@ -18,15 +19,10 @@
 
 <div id="showsignup"> <%= erb :'/signup' %> </div>
 <div id="showlogin"> <%= erb :'/login' %> </div>
-
-<a href="/signup">Sign Up</a>
-<a href="/login">Login</a>
-<a href="/logout">Logout</a>
-
-<a href='/artists'>Artists</a>
-<a href="/albums">Albums</a>
-<a href='/tracks'>Tracks</a>
-
 <% if session[:user_id] %>
+<center>
+<a href='/artists'>Artists</a>|<a href="/albums">Albums</a>|<a href='/tracks'>Tracks</a> 
+</center>
+	<%= erb :"searchapi" %>
   <%= erb :"playlists/all", locals:{playlists: playlists} %>
 <% end %>
