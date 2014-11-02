@@ -1,7 +1,10 @@
 get '/playlists' do
-  @playlists = Playlist.all
-
-  erb :"playlists/all", locals:{playlists: @playlists}
+  if session[:user_id]
+    @playlists = Playlist.find_by(user_id: session[:user_id])
+    erb :"playlists/all", locals:{playlists: @playlists}
+  else
+    redirect '/login'
+  end
 end
 
 get '/add/playlist' do
