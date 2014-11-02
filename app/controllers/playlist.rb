@@ -11,9 +11,12 @@ get '/add/playlist' do
 end
 
 post '/add_song' do
-  Playlist.find_or_create_by(name: params[:name]).tracks << Track.find(params[:track])
+  playlist = Playlist.find_or_create_by(name: params[:name])
+  playlist.tracks << Track.find(params[:track])
+  playlist.user_id = session[:user_id]
+  playlist.save
 
-  redirect '/playlists'
+  redirect '/'
 end
 
 get '/playlist/:id' do |id|
