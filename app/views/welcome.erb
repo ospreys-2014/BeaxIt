@@ -1,14 +1,25 @@
+<div class="jumbotron" id ="welcome" style='text-align: center;'>
 <% if session[:user_id] %>
-  <p>Welcome to soundcloud <%= user.username %>!</p>
+  <p>Welcome, <%= user.username %>!</p>
 <% else %>
-  <p>Welcome to soundcloud!</p>
+  <p>Welcome!</p>
+  <h1>XiranSound</h1>
+  <p>This is a simple site to organize your music needs.</p>
+  <p><a href="/signup" id="signup" class="btn btn-primary btn-lg" >Sign up</a> <a href="/login" id="login" class="btn btn-primary btn-lg" >Login</a></p>
 <% end %>
 
-<a href="/signup">SignUp</a>
+</div>
+
+<div id="showsignup"> <%= erb :'/signup' %> </div>
+<div id="showlogin"> <%= erb :'/login' %> </div>
+
+<a href="/signup">Sign Up</a>
 <a href="/login">Login</a>
 <a href="/logout">Logout</a>
 
 <a href='/artists'>Artists</a>
+<a href='/tracks'>tracks</a>
+
 <% if session[:user_id] %>
   <%= erb :"playlists/all", locals:{playlists: playlists} %>
 <% end %>

@@ -1,12 +1,34 @@
 <% if session[:error] %>
-<center><p><%= session[:error] %></p></center>
+<div class="alert alert-dismissable alert-danger">
+	<center><p><%= session[:error] %></p></center>
+</div>
 <% session[:error] = nil %>
 <% end %>
+<br>
+<br>
+<br>
 
-<form action="/login" method="POST">
-Username:
-<input type="text" name="username">
-Password:
-<input type="password" name="password">
-<input type="submit" value="login">
+<form action="/login" method="POST" class="form-horizontal">
+  <fieldset>
+    <h2>Please Login</h2>
+    <div class="form-group">
+      <label for="inputEmail" class="col-md-2 control-label">Username:</label>
+      <div class="col-md-5">
+        <input type="text" class="form-control" name="user[username]" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-md-2 control-label">Password:</label>
+      <div class="col-md-5">
+        <input type="password" class="form-control" name="user[password]" placeholder="Password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-5 col-md-offset-2">
+        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+      </div>
+    </div>
+  </fieldset>
 </form>
+

@@ -16,6 +16,7 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'bcrypt'
+gem 'itunes-search-api'
 
 gem 'ruby-mp3info', '~> 0.8.5'
 gem "iconv", "~> 1.0.3"

@@ -1,14 +1,37 @@
 <% if session[:error] %>
-<center><p><%= session[:error][0] %></p></center>
+<div class="alert alert-dismissable alert-danger">
+  <center><p><%= session[:error][0] %></p></center>
+</div>
 <% session[:error] = nil %>
 <% end %>
 
-<form action="/signup" method="POST">
-Create a Username:
-<input type="text" name="user[username]"><br>
-Enter a Password:
-<input type="password" name="user[password]"><br>
-Re-enter your Password:
-<input type="password" name="user[password_confirmation">
-<input type="submit" value="signup">
+<form action="/signup" method="POST" class="form-horizontal">
+  <fieldset>
+    <h2>Sign Up</h2>
+    <div class="form-group">
+      <label for="inputEmail" class="col-md-2 control-label">Create a Username</label>
+      <div class="col-md-5">
+        <input type="text" class="form-control" id="inputEmail" name="user[username]" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-md-2 control-label">Enter a Password:</label>
+      <div class="col-md-5">
+        <input type="password" class="form-control" id="inputPassword" name="user[password]" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-md-2 control-label">Re-enter Password:</label>
+      <div class="col-md-5">
+        <input type="password" class="form-control" id="inputPassword" name="user[password_confirmation" placeholder="Confirm Password">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-5 col-md-offset-2">
+        <button class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
 </form>
