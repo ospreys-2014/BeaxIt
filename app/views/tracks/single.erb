@@ -1,5 +1,5 @@
 <p><%= track.title %></p>
-<audio src="<%=track.link%>.mp3" controls></audio>
+<audio controls> <source src=<%=track.link%> type= "audio/mp4"></audio>
 <% if session[:user_id] %>
   <%= erb :"playlists/add", locals:{track: track} %>
 <% end %>

@@ -17,6 +17,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'bcrypt'
+gem 'itunes-search-api'
 
 group :test do
   gem 'shoulda-matchers'

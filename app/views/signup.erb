@@ -1,5 +1,3 @@
-<%= erb :navbar %>
-
 <% if session[:error] %>
 <center><p><%= session[:error][0] %></p></center>
 <% session[:error] = nil %>
@@ -26,7 +24,7 @@
         <input type="password" class="form-control" id="inputPassword" name="user[password_confirmation" placeholder="Confirm Password">
       </div>
     </div>
-   
+
     <div class="form-group">
       <div class="col-md-5 col-md-offset-2">
         <button class="btn btn-default">Cancel</button>
