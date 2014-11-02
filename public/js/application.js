@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('body').on("click", "#signup", function(event){
-    event.preventDefault();
+    // event.preventDefault();
     var welcome = $("#welcome")
     var signup = $("#showsignup")
     $("#showsignup").fadeIn();
@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 
   $('body').on("click", "#login", function(event){
-    event.preventDefault();
+    // event.preventDefault();
    	var welcome = $("#welcome")
     var login = $("#showlogin")
     $("#showlogin").fadeIn();
