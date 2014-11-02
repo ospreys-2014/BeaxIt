@@ -20,24 +20,24 @@ $(document).ready(function() {
 
 
 (function(document) {
-	'use strict';
-
+	'use strict';  //JavaScript code executed in "strict mode".In normal JS mistyping a variable name creates a new global variable
+								// In strict mode, this will throw an error
 	var TableFilter = (function(Arr) {
 
-		var _input;
+		var searchinput;
 
-		function _onInputEvent(e) {
-			_input = e.target;
-			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+		function onInputEvent(event) {
+			searchinput = event.target;
+			var tables = document.getElementsByClassName(searchinput.getAttribute('data-table'));
 			Arr.forEach.call(tables, function(table) {
 				Arr.forEach.call(table.tBodies, function(tbody) {
-					Arr.forEach.call(tbody.rows, _filter);
+					Arr.forEach.call(tbody.rows, filter);
 				});
 			});
 		}
 
-		function _filter(row) {
-			var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+		function filter(row) {
+			var text = row.textContent.toLowerCase(), val = searchinput.value.toLowerCase();
 			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
 		}
 
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			init: function() {
 				var inputs = document.getElementsByClassName('table-filter');
 				Arr.forEach.call(inputs, function(input) {
-					input.oninput = _onInputEvent;
+					input.oninput = onInputEvent;
 				});
 			}
 		};

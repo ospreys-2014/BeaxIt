@@ -31,12 +31,13 @@ GEM
       activesupport (>= 3.0.0)
     faker (1.3.0)
       i18n (~> 0.5)
+    httparty ()
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
+    iconv (1.0.4)
     itunes-search-api (0.1.0)
-      httparty
     json (1.8.1)
     mime-types (2.3)
     mini_portile (0.6.0)
@@ -60,6 +61,7 @@ GEM
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
+    ruby-mp3info (0.8.5)
     shotgun (0.9)
       rack (>= 1.0)
     shoulda-matchers (2.6.1)
@@ -93,11 +95,13 @@ DEPENDENCIES
   capybara
   factory_girl
   faker
+  iconv (~> 1.0.3)
   itunes-search-api
   pg
   rack-test
   rake
   rspec
+  ruby-mp3info (~> 0.8.5)
   shotgun
   shoulda-matchers
   sinatra
