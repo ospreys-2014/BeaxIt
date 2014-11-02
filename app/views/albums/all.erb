@@ -2,7 +2,15 @@
   <%= erb :search_box %>
 </h2>
 <div class="albums">
-  <% albums.each do |album| %>
-    <%= erb :"albums/single", locals:{album: album} %>
-  <% end %>
+  <table class="table table-striped table-hover">
+    <% albums.each do |album| %>
+    <tbody>
+      <tr>
+        <td>
+          <%= album.title %>
+          <%= erb :"albums/single", locals:{album: album} %>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
 </div>

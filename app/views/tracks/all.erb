@@ -2,7 +2,12 @@
   <%= erb :search_box %>
 </h2>
 <div class="tracks">
-  <% tracks.each do |track| %>
-    <%= erb :"tracks/single", locals:{track: track} %>
-  <% end %>
+  <table class="table table-striped table-hover">
+    <% tracks.each do |track| %>
+    <tbody>
+      <tr>
+        <td><%= erb :"tracks/single", locals:{track: track} %></td>
+      </tr>
+    </tbody>
+    <% end %>
 </div>

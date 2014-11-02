@@ -2,7 +2,12 @@
   <%= erb :search_box %>
 </h2>
 <div class="artists">
-  <% artists.each do |artist| %>
-    <%= erb :"artists/single", locals:{artist: artist} %>
-  <% end %>
+  <table class="table table-striped table-hover">
+    <% artists.each do |artist| %>
+    <tbody>
+      <tr>
+        <td><%= erb :"artists/single", locals:{artist: artist} %></td>
+      </tr>
+    </tbody>
+    <% end %>
 </div>
