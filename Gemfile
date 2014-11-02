@@ -15,8 +15,10 @@ gem 'bcrypt-ruby'
 gem 'rake'
 
 gem 'shotgun'
-
 gem 'bcrypt'
+
+gem 'ruby-mp3info', '~> 0.8.5'
+gem "iconv", "~> 1.0.3"
 
 group :test do
   gem 'shoulda-matchers'

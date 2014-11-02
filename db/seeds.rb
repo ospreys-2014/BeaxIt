@@ -1,10 +1,11 @@
-# require 'itunes-search-api'
-# bloom = ITunesSearchAPI.search(term: 'Bloom', entity: 'song', :media => "music")
-# p bloom[10]
-# bloom.each do |track|
-#   # p track['trackName']
-# end
+require 'mp3info'
 
+dir = Dir["public/tracks/**/*.mp3"]
+dir.each do |track|
+  Mp3Info.open(track) do |info|
+    p info.tag.title
+  end
+end
 
 # Track.all.each do |track|
 #   track.update(link: "tracks/#{track.title}")
