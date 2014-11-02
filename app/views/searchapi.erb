@@ -5,22 +5,11 @@
 <% session[:error] = nil %>
 <% end %>
 <br>
-<br>
-
+  
 <form action="/searchapi" method="POST" class="form-horizontal">
-  <fieldset>
-    <h2>Add an Artist</h2>
-
-    <div class="form-group">
-      <div class="col-md-5">
-        <input type="text" class="form-control" name="artist" placeholder="Artist Name">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-md-5 col-md-offset-2">
-        <button type="submit" class="btn btn-primary btn-lg">Add</button>
-      </div>
-    </div>
-  </fieldset>
+<h2 class="text-primary">Add an Artist</h2>
+  <div class="col-md-3" >
+    <input type="text" class="form-control" name="artist" placeholder="Artist Name">
+  </div>
 </form>
+<button type="submit" class="btn btn-primary">Add</button>

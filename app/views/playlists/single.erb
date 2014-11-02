@@ -1,5 +1,5 @@
 <div class="playlist">
-  <p>Playlist: </p> <%= playlist.name %>
+  <ul><h3><%= playlist.name %></h3></ul>
   <% playlist.tracks.each do |track| %>
     <%= erb :"playlists/single_track", locals:{track: track} %>
   <% end %>

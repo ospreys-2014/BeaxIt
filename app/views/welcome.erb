@@ -1,12 +1,11 @@
-
 <div class="jumbotron" id ="welcome" style='text-align: center;'>
 <% if session[:user_id] %>
-  <h2 class="text-primary">Welcome, <strong><%= user.username %>!</strong></h2>
-<br>
-<blockquote>
-  <p>If music be the food of love, play on.</p>
-  <small>William Shakespeare</small>
-</blockquote>
+		  <h2 class="text-primary">Welcome, <strong><%= user.username %>!</strong></h2>
+		<br>
+		<blockquote>
+		  <p>If music be the food of love, play on.</p>
+		  <small>William Shakespeare</small>
+		</blockquote>
 
 <% else %>
   <p>Welcome!</p>
@@ -20,9 +19,9 @@
 <div id="showsignup"> <%= erb :'/signup' %> </div>
 <div id="showlogin"> <%= erb :'/login' %> </div>
 <% if session[:user_id] %>
-<center>
-<a href='/artists'>Artists</a>|<a href="/albums">Albums</a>|<a href='/tracks'>Tracks</a> 
-</center>
+
 	<%= erb :"searchapi" %>
+	<br>
+	<br>
   <%= erb :"playlists/all", locals:{playlists: playlists} %>
 <% end %>
