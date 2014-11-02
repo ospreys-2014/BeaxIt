@@ -10,44 +10,44 @@
 #     album.save
 #   end
 # end
-beatles = ITunesSearchAPI.search(term: "#{params[:artist]}", entity: 'song', :media => "music")
-beatles.each do |info|
-  track = Track.create(title: info['trackName'], link: info['previewUrl'])
-  album = Album.find_or_create_by(title: info['collectionName'])
-  artist = Artist.find_or_create_by(name: info['artistName'])
-  track.artist, track.album = artist, album
-  artist.albums << album
-  album.tracks << track
-  track.save
-  album.save
-  artist.save
-end
+# beatles = ITunesSearchAPI.search(term: "#{params[:artist]}", entity: 'song', :media => "music")
+# beatles.each do |info|
+#   track = Track.create(title: info['trackName'], link: info['previewUrl'])
+#   album = Album.find_or_create_by(title: info['collectionName'])
+#   artist = Artist.find_or_create_by(name: info['artistName'])
+#   track.artist, track.album = artist, album
+#   artist.albums << album
+#   album.tracks << track
+#   track.save
+#   album.save
+#   artist.save
+# end
 
-calvinharris = ITunesSearchAPI.search(term: 'Calvin harris', entity: 'song', :media => "music")
-calvinharris.each do |info|
-  track = Track.create(title: info['trackName'], link: info['previewUrl'])
-  album = Album.find_or_create_by(title: info['collectionName'])
-  artist = Artist.find_or_create_by(name: info['artistName'])
-  track.artist, track.album = artist, album
-  artist.albums << album
-  album.tracks << track
-  track.save
-  album.save
-  artist.save
-end
+# calvinharris = ITunesSearchAPI.search(term: 'Calvin harris', entity: 'song', :media => "music")
+# calvinharris.each do |info|
+#   track = Track.create(title: info['trackName'], link: info['previewUrl'])
+#   album = Album.find_or_create_by(title: info['collectionName'])
+#   artist = Artist.find_or_create_by(name: info['artistName'])
+#   track.artist, track.album = artist, album
+#   artist.albums << album
+#   album.tracks << track
+#   track.save
+#   album.save
+#   artist.save
+# end
 
-flume = ITunesSearchAPI.search(term: 'Flume', entity: 'song', :media => "music")
-flume.each do |info|
-  track = Track.create(title: info['trackName'], link: info['previewUrl'])
-  album = Album.find_or_create_by(title: info['collectionName'])
-  artist = Artist.find_or_create_by(name: info['artistName'])
-  track.artist, track.album = artist, album
-  artist.albums << album
-  album.tracks << track
-  track.save
-  album.save
-  artist.save
-end
+# flume = ITunesSearchAPI.search(term: 'Flume', entity: 'song', :media => "music")
+# flume.each do |info|
+#   track = Track.create(title: info['trackName'], link: info['previewUrl'])
+#   album = Album.find_or_create_by(title: info['collectionName'])
+#   artist = Artist.find_or_create_by(name: info['artistName'])
+#   track.artist, track.album = artist, album
+#   artist.albums << album
+#   album.tracks << track
+#   track.save
+#   album.save
+#   artist.save
+# end
 
 # Track.all.each do |track|
 #   track.artist = Artist.first
