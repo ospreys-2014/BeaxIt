@@ -1,4 +1,16 @@
+<br>
+<br>
+<br>
+<div class="jumbotron" style='text-align: center;'>
 <% if session[:user_id] %>
+
+	<p>Welcome <%= session[:user_name] %>!</p>
+<% end %>
+  <h1>XiranSound</h1>
+  <p>This is a simple site to organize your music needs.</p>
+  <p><a href="/signup" class="btn btn-primary btn-lg" >Sign up</a> <a href="/login" class="btn btn-primary btn-lg">Login</a></p>
+</div>
+
   <p>Welcome to soundcloud <%= user.username %>!</p>
 <% else %>
   <p>Welcome to soundcloud!</p>
@@ -8,7 +20,6 @@
 <a href="/login">Login</a>
 <a href="/logout">Logout</a>
 
-<a href='/artists'>Artists</a>
 <% if session[:user_id] %>
   <%= erb :"playlists/all", locals:{playlists: playlists} %>
 <% end %>
