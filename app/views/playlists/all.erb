@@ -1,3 +1,6 @@
+<h2> Playlists:
+  <%= erb :search_box %>
+</h2>
 <div class="playlists">
   <% playlists.each do |playlist| %>
     <%= erb :"playlists/single", locals:{playlist: playlist} %>

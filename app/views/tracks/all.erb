@@ -1,7 +1,6 @@
 <h2> Tracks:
-
-	<input type="search" class="table-filter" data-table="table table-striped table-hover" placeholder="Search Filter"></h2>
-
+  <%= erb :search_box %>
+</h2>
 <div class="tracks">
   <% tracks.each do |track| %>
     <%= erb :"tracks/single", locals:{track: track} %>

@@ -1,3 +1,6 @@
+<h2> Artists:
+  <%= erb :search_box %>
+</h2>
 <div class="artists">
   <% artists.each do |artist| %>
     <%= erb :"artists/single", locals:{artist: artist} %>
