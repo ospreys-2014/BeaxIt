@@ -1,11 +1,19 @@
 $(document).ready(function() {
-  $(document).on("click", "#signup", function(event){
+  $('body').on("click", "#signup", function(event){
     event.preventDefault();
-    $("#showsignup").toggle();
+    var welcome = $("#welcome")
+    var signup = $("#showsignup")
+    $("#showsignup").fadeIn();
+    $(welcome).replaceWith(signup);
   })
-  $(document).on("click", "#login", function(event){
+
+
+  $('body').on("click", "#login", function(event){
     event.preventDefault();
-    $("#showlogin").toggle();
+   	var welcome = $("#welcome")
+    var login = $("#showlogin")
+    $("#showlogin").fadeIn();
+    $(welcome).replaceWith(login);
   })
 
 });
