@@ -10,11 +10,17 @@
 #     album.save
 #   end
 # end
-
-bloom = ITunesSearchAPI.search(term: 'Beatles', entity: 'song', :media => "music")
-bloom.each do |track|
-  Track.create(title: track['trackName'], link: track['previewUrl'])
-
+beatles = ITunesSearchAPI.search(term: 'Beatles', entity: 'song', :media => "music")
+beatles.each do |info|
+  track = Track.create(title: info['trackName'], link: info['previewUrl'])
+  album = Album.find_or_create_by(title: info['collectionName'])
+  artist = Artist.find_or_create_by(name: info['artistName'])
+  track.artist, track.album = artist, album
+  artist.albums << album
+  album.tracks << track
+  track.save
+  album.save
+  artist.save
 end
 
 # Track.all.each do |track|

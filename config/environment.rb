@@ -24,6 +24,7 @@ require 'erb'
 
 require 'mp3info'
 require 'itunes-search-api'
+require 'httparty'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

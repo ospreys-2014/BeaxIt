@@ -9,7 +9,7 @@
 
 <% else %>
   <p>Welcome!</p>
-  <h1>XiranSound</h1>
+  <h1>BeaxIt</h1>
   <p>This is a simple site to organize your music needs.</p>
   <p><a href="/signup" id="signup" class="btn btn-primary btn-lg" >Sign up</a> <a href="/login" id="login" class="btn btn-primary btn-lg" >Login</a></p>
 <% end %>
@@ -24,7 +24,8 @@
 <a href="/logout">Logout</a>
 
 <a href='/artists'>Artists</a>
-<a href='/tracks'>tracks</a>
+<a href="/albums">Albums</a>
+<a href='/tracks'>Tracks</a>
 
 <% if session[:user_id] %>
   <%= erb :"playlists/all", locals:{playlists: playlists} %>
