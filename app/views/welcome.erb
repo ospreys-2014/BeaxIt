@@ -6,10 +6,13 @@
   <p>Welcome!</p>
   <h1>XiranSound</h1>
   <p>This is a simple site to organize your music needs.</p>
-  <p><a href="/signup" class="btn btn-primary btn-lg" >Sign up</a></p>
+  <p><a href="/signup" id="signup" class="btn btn-primary btn-lg" >Sign up</a> <a href="/login" id="login" class="btn btn-primary btn-lg" >Login</a></p>
 <% end %>
 
 </div>
+
+<div id="showsignup"> <%= erb :'/signup' %> </div>
+<div id="showlogin"> <%= erb :'/login' %> </div>
 
 <a href="/signup">Sign Up</a>
 <a href="/login">Login</a>
