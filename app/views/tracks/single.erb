@@ -1,9 +1,13 @@
-<a href="/track/<%= track.id%>"><%= track.title %></a><br><br>
+<div class="single-track">
+<h3><a href="/track/<%= track.id%>"><%= track.title %></a></h3><br>
 <img src="<%= track.album.artwork_url %>"><br><br>
 <audio controls> <source src=<%=track.link%> type= "audio/mp4"></audio>
-<div class="pager">
+<div class="pager single-track">
+  <br>
   <li><a href="<%= track.album.preview %>" target="_blank">Buy Track</a></li>
 </div><br> <br>
 <% if session[:user_id]%>
  <%= erb :"playlists/add", locals:{track: track} %>
 <% end %>
+</div>
+
