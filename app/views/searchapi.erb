@@ -1,8 +1,8 @@
-<% if session[:error] %>
-<div class="alert alert-dismissable alert-danger">
-	<center><p><%= session[:error] %></p></center>
-</div>
-<% session[:error] = nil %>
+<% if session[:no_artist_found] %>
+  <div class="alert alert-dismissable alert-danger">
+  	 <p><%= session[:no_artist_found] %></p>
+  </div>
+  <% session[:no_artist_found] = nil %>
 <% end %>
 <br>
 <br>
