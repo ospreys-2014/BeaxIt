@@ -3,8 +3,8 @@ def search_by_artist(artist)
   if itunes_query.empty?
     session[:no_artist_found] = "NO ARTIST FOUND!"
   else
-    artist = Artist.find_or_create_by(name: "#{artist}")
     itunes_query.each do |info|
+      artist = Artist.find_or_create_by(name: info['artistName'])
       track = Track.find_or_create_by(title: info['trackName'], link: info['previewUrl'])
       album = Album.find_or_create_by(title: info['collectionName'],preview: info['artistViewUrl'],artwork_url: info['artworkUrl100'])
       track.artist, track.album = artist, album
@@ -13,7 +13,6 @@ def search_by_artist(artist)
       track.save
       album.save
       artist.save
-      return artist.id
     end
   end
 end
