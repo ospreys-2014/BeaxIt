@@ -1,15 +1,9 @@
-<% if session[:error] %>
-<div class="alert alert-dismissable alert-danger">
-	<center><p><%= session[:error] %></p></center>
-</div>
-<% session[:error] = nil %>
-<% end %>
-<br>
-  
+<div id="showsuccess" class="alert alert-dismissable alert-success"> <center><em>Woot! </em> Your artist has been successfully added. </center></div>
+
 <form action="/searchapi" method="POST" class="form-horizontal">
 <h2 class="text-primary">Add an Artist</h2>
   <div class="col-md-3" >
     <input type="text" class="form-control" name="artist" placeholder="Artist Name">
   </div>
-</form>
 <button type="submit" class="btn btn-primary">Add</button>
+</form>

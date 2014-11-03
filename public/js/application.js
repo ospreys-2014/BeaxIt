@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $('body').on("click", "#signup", function(event){
-    // event.preventDefault();
     var welcome = $("#welcome")
     var signup = $("#showsignup")
     $("#showsignup").fadeIn();
@@ -9,11 +8,15 @@ $(document).ready(function() {
 
 
   $('body').on("click", "#login", function(event){
-    // event.preventDefault();
    	var welcome = $("#welcome")
     var login = $("#showlogin")
     $("#showlogin").fadeIn();
     $(welcome).replaceWith(login);
+  })
+
+    $('.form-horizontal').on("submit", function(event){
+    	console.log('test')
+    $("#showsuccess").fadeIn();
   })
 
 });
