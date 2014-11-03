@@ -22,8 +22,8 @@
 <% if session[:user_id] %>
 
 		<%= erb :"searchapi" %>
-		
+
 		<br>
 		<br>
-	 <%= erb :"playlists/all", locals:{playlists: playlists} %>
+	 <center><%= erb :"playlists/all", locals:{playlists: playlists} %></center>
 <% end %>
