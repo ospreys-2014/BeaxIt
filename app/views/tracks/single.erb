@@ -1,6 +1,6 @@
 <a href="/track/<%= track.id%>"><%= track.title %></a><br><br>
 <img src="<%= track.album.artwork_url %>"><br><br>
-<audio controls> <source src=<%=track.link%> type= "audio/mp4"></audio><a href="<%= track.album.preview %>"/>Buy Track</a><br> <br>
+<audio controls> <source src=<%=track.link%> type= "audio/mp4"></audio><a href="<%= track.album.preview %>" target="_blank">Buy Track</a><br> <br>
 <% if session[:user_id]%>
  <%= erb :"playlists/add", locals:{track: track} %>
 <% end %>
