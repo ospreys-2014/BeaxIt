@@ -4,6 +4,9 @@ end
 
 post '/searchapi' do
 	id = search_by_artist(params[:artist])
-
-	redirect "/artist/#{id}"
+	if session[:no_artist_found]
+		redirect "/"
+	else
+		redirect "/artist/#{id}"
+	end
 end
