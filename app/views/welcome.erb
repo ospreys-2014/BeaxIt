@@ -18,12 +18,8 @@
 
 <div id="showsignup"> <%= erb :'/signup' %> </div>
 <div id="showlogin"> <%= erb :'/login' %> </div>
-
 <% if session[:user_id] %>
-
 		<%= erb :"searchapi" %>
-
-		<br>
 		<br>
 	 <center><%= erb :"playlists/all", locals:{playlists: playlists} %></center>
 <% end %>
