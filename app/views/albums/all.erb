@@ -6,7 +6,7 @@
     <% albums.each do |album| %>
     <tbody>
       <tr>
-        <td>
+        <td class="data-row">
           <h4><%= album.title %></h4>
           <%= erb :"albums/single", locals:{album: album} %>
         </td>
