@@ -3,7 +3,7 @@ get '/searchapi' do
 end
 
 post '/searchapi' do
-	search_by_artist(params[:artist])
+	id = search_by_artist(params[:artist])
 
-	redirect'/'
+	redirect "/artist/#{id}"
 end

@@ -13,6 +13,7 @@ def search_by_artist(artist)
       track.save
       album.save
       artist.save
+      return artist.id
     end
   end
 end
