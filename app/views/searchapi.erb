@@ -1,4 +1,14 @@
-<div id="showsuccess" class="alert alert-dismissable alert-success"> <center><em>Woot! </em> Your artist has been successfully added. </center></div>
+<% if session[:no_artist_found] %>
+  <div class="alert alert-dismissable alert-danger">
+     <p><%= session[:no_artist_found] %></p>
+  </div>
+  <% session[:no_artist_found] = nil %>
+<% else %>
+  <div id="showsuccess" class="alert alert-dismissable alert-success"> <center><em>Woot! </em> Your artist has been successfully added. </center></div>
+<% end %>
+<br>
+<br>
+>>>>>>> search_api_update
 
 <form action="/searchapi" method="POST" class="form-horizontal">
 <h2 class="text-primary">Add an Artist</h2>
