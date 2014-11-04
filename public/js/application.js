@@ -57,8 +57,11 @@ $(document).ready(function() {
       type: 'get'
     })
     .done(function(response) {
-      $('.display').append(response);
-      TableFilter.init();
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
     });
   });
 $('#albums').click(function(event) {
@@ -69,8 +72,11 @@ $('#albums').click(function(event) {
       type: 'get'
     })
     .done(function(response) {
-      $('.display').append(response);
-      TableFilter.init();
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
     });
   });
 $('#artists').click(function(event) {
@@ -81,12 +87,14 @@ $('#artists').click(function(event) {
       type: 'get'
     })
     .done(function(response) {
-      $('.display').append(response);
-      TableFilter.init();
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
     });
   });
     $('#artist_search').on("submit", function(event){
-    // $tracks = $(event)
     event.preventDefault();
     $.ajax({
       url: '/tracks',
