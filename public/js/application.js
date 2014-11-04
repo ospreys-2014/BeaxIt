@@ -86,15 +86,16 @@ $('#artists').click(function(event) {
     });
   });
     $('#artist_search').on("submit", function(event){
-    $("#showsuccess").fadeIn();
+    // $tracks = $(event)
     event.preventDefault();
-    $tracks = $(event.target)
     $.ajax({
-      url: $tracks.attr('href'),
+      url: '/tracks',
       type: 'get'
     })
     .done(function(response) {
-      $('.display').append(response);
+    $('.display').append(response);
+    $("#showsuccess").fadeIn('slow').delay('800');
+    $("#showsuccess").fadeOut('slow');
       TableFilter.init();
     });
   })
