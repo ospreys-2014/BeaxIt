@@ -1,3 +1,38 @@
+var TableFilter = (function(Arr) {
+  var tables;
+  var searchinput;
+
+  function onInputEvent(event) {
+    searchinput = event.target;
+    tables = document.getElementsByClassName(searchinput.getAttribute('data-table'));
+    Arr.forEach.call(tables, function(table) {
+      Arr.forEach.call(table.tBodies, function(tbody) {
+        Arr.forEach.call(tbody.rows, filter);
+      });
+    });
+  }
+
+  function filter(row) {
+    var text = row.textContent.toLowerCase(), val = searchinput.value.toLowerCase();
+    row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+  }
+
+  return {
+    init: function() {
+      var inputs = document.getElementsByClassName('table-filter');
+      Arr.forEach.call(inputs, function(input) {
+        input.oninput = onInputEvent;
+      });
+    }
+  };
+  })(Array.prototype);
+
+  document.addEventListener('readystatechange', function() {
+  if (document.readyState === 'complete') {
+    TableFilter.init();
+  }
+});
+
 $(document).ready(function() {
   $('body').on("click", "#signup", function(event){
     var welcome = $("#welcome")
@@ -14,50 +49,64 @@ $(document).ready(function() {
     $(welcome).replaceWith(login);
   })
 
-    $('.form-horizontal').on("submit", function(event){
-    	console.log('test')
-    $("#showsuccess").fadeIn();
+  $('#tracks').click(function(event) {
+    event.preventDefault();
+    $tracks = $(event.target)
+    $.ajax({
+      url: $tracks.attr('href'),
+      type: 'get'
+    })
+    .done(function(response) {
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
+    });
+  });
+$('#albums').click(function(event) {
+    event.preventDefault();
+    $albums = $(event.target)
+    $.ajax({
+      url: $albums.attr('href'),
+      type: 'get'
+    })
+    .done(function(response) {
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
+    });
+  });
+$('#artists').click(function(event) {
+    event.preventDefault();
+    $artists = $(event.target)
+    $.ajax({
+      url: $artists.attr('href'),
+      type: 'get'
+    })
+    .done(function(response) {
+      if ($('.display').children().length > 0) {
+        $('.display').children().remove();
+        $('.display').append(response);
+        TableFilter.init();
+      }
+    });
+  });
+    $('#artist_search').on("submit", function(event){
+    event.preventDefault();
+    $.ajax({
+      url: '/tracks',
+      type: 'get'
+    })
+    .done(function(response) {
+    $('.display').append(response);
+    $("#showsuccess").fadeIn('slow').delay('800');
+    $("#showsuccess").fadeOut('slow');
+      TableFilter.init();
+    });
   })
 
 });
 
-
-(function(document) {
-	'use strict';  //JavaScript code executed in "strict mode".In normal JS mistyping a variable name creates a new global variable
-								// In strict mode, this will throw an error
-	var TableFilter = (function(Arr) {
-
-		var searchinput;
-
-		function onInputEvent(event) {
-			searchinput = event.target;
-			var tables = document.getElementsByClassName(searchinput.getAttribute('data-table'));
-			Arr.forEach.call(tables, function(table) {
-				Arr.forEach.call(table.tBodies, function(tbody) {
-					Arr.forEach.call(tbody.rows, filter);
-				});
-			});
-		}
-
-		function filter(row) {
-			var text = row.textContent.toLowerCase(), val = searchinput.value.toLowerCase();
-			row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
-		}
-
-		return {
-			init: function() {
-				var inputs = document.getElementsByClassName('table-filter');
-				Arr.forEach.call(inputs, function(input) {
-					input.oninput = onInputEvent;
-				});
-			}
-		};
-	})(Array.prototype);
-
-	document.addEventListener('readystatechange', function() {
-		if (document.readyState === 'complete') {
-			TableFilter.init();
-		}
-	});
-
-})(document);

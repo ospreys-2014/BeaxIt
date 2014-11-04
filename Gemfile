@@ -1,6 +1,6 @@
 # PostgreSQL driver
 gem 'pg'
-
+gem 'pry'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'

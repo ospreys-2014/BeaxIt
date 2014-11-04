@@ -1,7 +1,7 @@
 get '/albums' do
   @albums = Album.all
 
-  erb :"albums/all", locals:{albums: @albums}
+  erb :"albums/all", locals:{albums: @albums}, layout: false
 end
 
 get '/album/:id' do |id|
