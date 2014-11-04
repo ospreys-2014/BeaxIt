@@ -7,6 +7,6 @@ post '/searchapi' do
 	if session[:no_artist_found]
 		redirect "/"
 	else
-		redirect "/tracks"
+		redirect "/"
 	end
 end

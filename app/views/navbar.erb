@@ -6,11 +6,10 @@
   </div>
 		<% if session[:user_id] %>
 		<ul class="nav navbar-nav navbar-left">
-			<li><a href='/artists'>Artists</a></li>
-			<li><a href="/albums">Albums</a></li>
-			<li><a href='/tracks'>Tracks</a> </li>
+			<li><a href='/artists' id='artists'>Artists</a></li>
+			<li><a href='/albums' id='albums'>Albums</a></li>
+			<li><a href='/tracks' id='tracks'>Tracks</a> </li>
     </ul>
-    <% end %>
 
 
     <ul class="nav navbar-nav navbar-right">
@@ -20,6 +19,7 @@
       </form></li>
       <li class="active"><a href="/logout">Logout</a></li>
     </ul>
+    <% end %>
 </div>
 
 
